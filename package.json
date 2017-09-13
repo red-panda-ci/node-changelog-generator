@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "npm run lint && npm run cover:unit",
     "test:unit": "./bin/test/unit",
     "test:int": "./bin/test/int",
@@ -47,7 +48,6 @@
     "conventional-changelog": "^1.1.5",
     "mock-require": "^2.0.2",
     "ramda": "^0.24.1",
-    "split2": "^2.1.1",
-    "through2": "^2.0.3"
+    "split2": "^2.1.1"
   }
 }
