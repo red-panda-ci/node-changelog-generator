@@ -44,6 +44,8 @@
     }
   },
   "dependencies": {
-    "conventional-changelog": "^1.1.5"
+    "conventional-changelog": "^1.1.5",
+    "mock-require": "^2.0.2",
+    "ramda": "^0.24.1"
   }
 }
