@@ -1,0 +1,14 @@
+.npm
+.git
+.gitignore
+.editorconfig
+node_modules
+npm-debug.log
+*.crt
+*.key
+*.pem
+*.md
+.eslintrc.json
+Dockerfile
+Jenkinsfile
+.travis.yml
