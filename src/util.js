@@ -1,9 +1,11 @@
 'use strict'
 
 const { forEach } = require('ramda')
+const { Transform } = require('stream')
 
 module.exports = {
-  handleIfHasCorrectArgs
+  handleIfHasCorrectArgs,
+  mapTransform
 }
 
 function handleIfHasCorrectArgs (args, expected) {
@@ -13,4 +15,14 @@ function handleIfHasCorrectArgs (args, expected) {
       process.exit(1)
     }
   }, expected)
+}
+
+function mapTransform (fMap) {
+  return new Transform({
+    objectMode: true,
+    writableObjectMode: true,
+    transform: function (data, enc, done) {
+      done(null, fMap(data))
+    }
+  })
 }
