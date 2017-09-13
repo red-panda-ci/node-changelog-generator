@@ -1,8 +1,18 @@
 'use strict'
 
-const { streamifyArray } = require('./util')
+const { Readable } = require('stream')
 
-module.exports = function gitRawCommits (COMMITS, COMMIT_DELIMITER, options) {
-  const commits = COMMITS.split(COMMIT_DELIMITER)
-  return streamifyArray(commits)
+module.exports = function gitRawCommits (options) {
+  const commitStream = new Readable({ read () { } })
+  process.stdin
+    .on('data', (data) => {
+      commitStream.push(data)
+    })
+    .on('end', () => {
+      commitStream.push(null)
+      commitStream.emit('close')
+    })
+
+  console.log(options)
+  return commitStream
 }
