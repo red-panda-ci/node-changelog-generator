@@ -9,7 +9,7 @@ module.exports = {
 function handleIfHasCorrectArgs (args, expected) {
   forEach((expectedKey) => {
     if (!args[expectedKey]) {
-      process.stdout.write(`THE ENVIRONMENT VARIABLE "${expectedKey}" IS MANDATORY`)
+      process.stderr.write(`THE ENVIRONMENT VARIABLE "${expectedKey}" IS MANDATORY`)
       process.exit(1)
     }
   }, expected)
