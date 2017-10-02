@@ -8,7 +8,7 @@ const env = require('./ENV')
 const { PRESET, COMMIT_DELIMITER, GIT_URL, FORMAT } = env
 const gitRawCommits = require('./src/gitRawCommits')
 const { handleIfHasCorrectArgs, mapTransform } = require('./src/util')
-const wrongGitRepository = 'https://github.com/madoos/node-changelog-generator' // conventional-changelog by default use it path. Changed by "GIT_URL"
+const wrongGitRepository = 'https://github.com/madoos/node-changelog-generator/commit' // conventional-changelog by default use it path. Changed by "GIT_URL"
 
 handleIfHasCorrectArgs(env, keys(env))
 
